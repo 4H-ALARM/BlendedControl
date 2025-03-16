@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class BlendedControlTest {
-    static class ControlVector extends Blendable<ControlVector> {
+    static class ControlVector implements Blendable<ControlVector> {
         public final double fieldX;
         public final double fieldY;
         public final double robotX;

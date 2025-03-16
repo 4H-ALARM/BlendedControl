@@ -2,20 +2,17 @@ package com.alarmrobotics;
 
 public class BlendedInput<T extends Blendable<T>> {
     private T control;
-    private T influence;
+    private T coefficient;
 
-    public BlendedInput(T control, T influence) {
+    public BlendedInput(T control, T coefficient) {
         this.control = control;
-        this.influence = influence;
+        this.coefficient = coefficient;
     }
 
     /**
-     * Returns the control object scaled field-wise by the influence object.
-     * 
-     * Imagine "influence" is a number between 0 and 1 which is multiplied
-     * against the control object.
+     * Returns the control point scaled field-by-field by the coefficient.
      */
     public T scaled() {
-        return influence.mul(control);
+        return coefficient.mul(control);
     }
 }
